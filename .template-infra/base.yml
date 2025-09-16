@@ -1,0 +1,10 @@
+# Changes here will be overwritten by Copier
+_commit: v0.1.0
+_src_path: https://github.com/navapbc/template-infra-azure
+base_code_repository_url: https://github.com/navapbc/akhealth-ies-terraform
+base_default_certificate_contact_email: jacobpack@navapbc.com
+base_default_region: eastus
+base_owner: TestOwner
+base_project_name: akhealth-ies-terraform
+base_tenant_id: ba06645f-e0cc-44b5-897f-34eb6aa59588
+template: base

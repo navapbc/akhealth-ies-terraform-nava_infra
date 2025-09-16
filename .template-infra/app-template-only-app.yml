@@ -1,0 +1,6 @@
+# Changes here will be overwritten by Copier
+_commit: v0.1.0
+_src_path: https://github.com/navapbc/template-infra-azure
+app_has_dev_env_setup: false
+app_name: template-only-app
+template: app
