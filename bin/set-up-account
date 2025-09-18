@@ -160,20 +160,21 @@ export TF_VAR_account_id=${account_id}
 # recreate them, but first check if they already exist in the state file. If we
 # are re-running account setup and some resources already exists then skip the
 # import step.
+
 if ! terraform state list module.backend.azurerm_resource_group.tf_state; then
   echo "${green}""Importing resource group""${restore}"
-  terraform import module.backend.azurerm_resource_group.tf_state "$(az group show --subscription "${account_id}" --name "${resource_group_name}" --query 'id' -o tsv)"
+  terraform import azurerm_resource_group.tf_state "$(az group show --subscription "${account_id}" --name "${resource_group_name}" --query 'id' -o tsv)"
 fi
 
 if ! terraform state list module.backend.azurerm_storage_account.tf_state; then
   echo "${green}""Importing storage account""${restore}"
-  terraform import module.backend.azurerm_storage_account.tf_state "$(az storage account show --subscription "${account_id}" --resource-group "${resource_group_name}" --name "${storage_account_name}" --query 'id' -o tsv)"
+  terraform import azurerm_storage_account.tf_state "$(az storage account show --subscription "${account_id}" --resource-group "${resource_group_name}" --name "${storage_account_name}" --query 'id' -o tsv)"
 fi
 
 if ! terraform state list module.backend.azurerm_storage_container.tf_state; then
   echo "${green}""Importing storage container""${restore}"
   storage_account_id="$(az storage account show --subscription "${account_id}" --resource-group "${resource_group_name}" --name "${storage_account_name}" --query 'id' -o tsv)"
-  terraform import module.backend.azurerm_storage_container.tf_state "${storage_account_id}/blobServices/default/containers/${storage_container_name}"
+  terraform import azurerm_storage_container.tf_state "${storage_account_id}/blobServices/default/containers/${storage_container_name}"
 fi
 
 terraform apply \
