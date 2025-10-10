@@ -1,12 +1,12 @@
 locals {
   # Machine readable project name (lower case letters, dashes, and underscores)
-  project_name = "akhealth-ies-terraform"
+  project_name = "akhealth-ies-terraform-nava_infra"
 
   # Project owner
   owner = "TestOwner"
 
   # URL of project source code repository
-  code_repository_url = "https://github.com/navapbc/akhealth-ies-terraform"
+  code_repository_url = "https://github.com/navapbc/akhealth-ies-terraform-nava_infra"
 
   default_region = "eastus"
 
