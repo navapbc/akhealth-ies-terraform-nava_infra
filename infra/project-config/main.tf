@@ -5,8 +5,6 @@ locals {
   # Project owner
   owner = "TestOwner"
 
-  is_shared_subscription = false
-
   # URL of project source code repository
   code_repository_url = "https://github.com/navapbc/akhealth-ies-terraform-nava_infra"
 

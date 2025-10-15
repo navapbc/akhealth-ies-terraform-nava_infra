@@ -1,6 +1,6 @@
 locals {
   manage_privatelink_dns = true
-  shared_account_name    = "lowers"
+  shared_account_name    = "Alaska IES"
 
   # If you are able to get the DNS for an entire domain/subdomain delegated to
   # your control, you can specify that domain here.
@@ -10,7 +10,7 @@ locals {
 
   network_configs = {
     dev = {
-      account_name = "lowers"
+      account_name = "Alaska IES"
 
       domain_config = {
         manage_dns  = true
