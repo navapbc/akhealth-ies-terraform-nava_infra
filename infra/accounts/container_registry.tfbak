@@ -1,3 +1,7 @@
+//The import statements in set-up-account fail here because the container registry doesn't exist yet 
+//(it's not setup until terraform-init-and-apply is run. This looks like its just solely for handling GH access to the ACR
+//so we can likely just adjust this and move it elsewhere
+
 locals {
   is_shared_subscription = var.account_name == local.shared_account_name
   container_registry_id  = local.is_shared_subscription ? module.container_registry_resource[0].container_registry_id : module.container_registry_data[0].container_registry_id
