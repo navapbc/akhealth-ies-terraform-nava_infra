@@ -67,3 +67,7 @@ output "project_unique_id" {
 output "infra_admins" {
   value = local.infra_admins
 }
+
+output "is_shared_subscription"{
+  value = local.is_shared_subscription
+}
