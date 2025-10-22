@@ -6,7 +6,7 @@ locals {
   # your control, you can specify that domain here.
   #
   # See /docs/infra/set-up-custom-domains.md
-  shared_hosted_zone = "my-project-subdomain.foo.com"
+  shared_hosted_zone = "akhealth-ies-demo.navateam.com"
 
   network_configs = {
     dev = {
